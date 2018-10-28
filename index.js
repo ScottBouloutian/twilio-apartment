@@ -3,7 +3,8 @@ const { VoiceResponse } = require('twilio').twiml;
 module.exports.voice = (event, context, callback) => {
     // Use the Twilio Node.js SDK to build an XML response
     const twiml = new VoiceResponse();
-    if (event.PhoneNumber === '+12672475497') {
+    const number = event.queryStringParameters.Caller;
+    if (number === '+12672475497') {
         twiml.say({ voice: 'alice' }, 'Welcome to Pasha Estates!');
         twiml.play({ digits: 4 });
     } else {
