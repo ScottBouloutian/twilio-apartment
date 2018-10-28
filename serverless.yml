@@ -1,0 +1,5 @@
+functions:
+  index:
+    handler: index.voice
+    events:
+      - http: GET voice
