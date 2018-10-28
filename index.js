@@ -5,6 +5,7 @@ module.exports.voice = (event, context, callback) => {
     const twiml = new VoiceResponse();
     const number = event.queryStringParameters.Caller;
     if (number === '+12672475497') {
+        twiml.pause({ length: 5 });
         twiml.say({ voice: 'alice' }, 'Welcome to Pasha Estates!');
         twiml.play({ digits: 4 });
     } else {
